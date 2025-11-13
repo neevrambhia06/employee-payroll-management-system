@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Payroll Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand" onclick="showSection('home')" style="cursor: pointer;">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"/>
+                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"/>
+                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span class="brand-text">Payroll Pro</span>
+            </div>
+            <div class="nav-links">
+                <button class="nav-btn active" onclick="showSection('employees')">
+                    <svg viewBox="0 0 20 20" fill="currentColor" class="btn-icon"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+                    Employees
+                </button>
+                <button class="nav-btn" onclick="showSection('payroll')">
+                    <svg viewBox="0 0 20 20" fill="currentColor" class="btn-icon"><path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4zM18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 100-2 1 1 0 000 2zm13 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
+                    Payroll
+                </button>
+                <button class="nav-btn" onclick="showSection('reports')">
+                    <svg viewBox="0 0 20 20" fill="currentColor" class="btn-icon"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+                    Reports
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Landing Page -->
+    <div id="home" class="section active">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Employee Payroll Management System</h1>
+                <p class="hero-subtitle">Streamline your payroll process with our powerful, easy-to-use platform</p>
+                <div class="hero-buttons">
+                    <button class="btn-hero" onclick="showSection('employees')">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/></svg>
+                        Manage Employees
+                    </button>
+                    <button class="btn-hero-secondary" onclick="showSection('payroll')">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/><path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"/></svg>
+                        Process Payroll
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+                </div>
+                <h3>Employee Management</h3>
+                <p>Easily add, edit, and manage employee information with our intuitive interface</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/><path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"/></svg>
+                </div>
+                <h3>Payroll Processing</h3>
+                <p>Generate accurate payroll with automatic calculations for overtime, bonuses, and deductions</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+                </div>
+                <h3>Analytics & Reports</h3>
+                <p>Get real-time insights into your payroll data with comprehensive reports and analytics</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Employees Section -->
+        <div id="employees" class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>Employee Management</h2>
+                    <p>Manage your workforce efficiently</p>
+                </div>
+                <div class="section-actions" style="display:flex; gap:10px; align-items:center;">
+                    <input id="employeeSearch" type="text" placeholder="Search by name or ID" style="padding:10px 12px; border-radius:10px; border:1px solid rgba(0,0,0,0.1); min-width:220px;">
+                    <select id="deptFilter" style="padding:10px 12px; border-radius:10px; border:1px solid rgba(0,0,0,0.1); min-width:160px;">
+                        <option value="">All Departments</option>
+                        <option value="IT">IT</option>
+                        <option value="HR">HR</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Sales">Sales</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Operations">Operations</option>
+                    </select>
+                    <button class="btn btn-primary" onclick="showAddEmployeeModal()">
+                        <svg viewBox="0 0 20 20" fill="currentColor" class="btn-icon"><path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"/></svg>
+                        Add Employee
+                    </button>
+                </div>
+            </div>
+            <div class="table-card">
+                <table id="employeeTable">
+                    <thead>
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Department</th>
+                            <th>Position</th>
+                            <th>Base Salary</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeeTableBody">
+                        <!-- Dynamic content -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Payroll Section -->
+        <div id="payroll" class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>Payroll Management</h2>
+                    <p>Process and manage payroll records</p>
+                </div>
+                <div class="section-actions" style="display:flex; gap:10px; align-items:center;">
+                    <input id="payrollSearch" type="text" placeholder="Search by Employee ID" style="padding:10px 12px; border-radius:10px; border:1px solid rgba(0,0,0,0.1); min-width:220px;">
+                    <input id="payrollStart" type="date" style="padding:10px 12px; border-radius:10px; border:1px solid rgba(0,0,0,0.1);">
+                    <input id="payrollEnd" type="date" style="padding:10px 12px; border-radius:10px; border:1px solid rgba(0,0,0,0.1);">
+                    <button class="btn btn-primary" onclick="showAddPayrollModal()">
+                        <svg viewBox="0 0 20 20" fill="currentColor" class="btn-icon"><path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"/></svg>
+                        Generate Payroll
+                    </button>
+                </div>
+            </div>
+            <div class="table-card">
+                <table id="payrollTable">
+                    <thead>
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Period Start</th>
+                            <th>Period End</th>
+                            <th>Base Salary</th>
+                            <th>Overtime</th>
+                            <th>Bonus</th>
+                            <th>Deductions</th>
+                            <th>Net Salary</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="payrollTableBody">
+                        <!-- Dynamic content -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Reports Section -->
+        <div id="reports" class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>Reports & Analytics</h2>
+                    <p>Insights into your payroll data</p>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Total Employees</h3>
+                        <div class="stat-number" id="totalEmployees">0</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"/></svg>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Payroll Records</h3>
+                        <div class="stat-number" id="totalPayrolls">0</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4zM18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 100-2 1 1 0 000 2zm13 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Total Payroll</h3>
+                        <div class="stat-number" id="totalPayrollAmount">₹0</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Charts Grid -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Department vs Payroll Distribution</h3>
+                    <canvas id="deptChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Payroll Trends</h3>
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Top 5 Employees by Payroll</h3>
+                    <canvas id="employeeChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Payroll Components</h3>
+                    <canvas id="componentChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Employee Modal -->
+    <div id="employeeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Employee</h2>
+                <button class="close" onclick="closeModal('employeeModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="employeeForm" onsubmit="handleEmployeeSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Employee ID</label>
+                            <input type="text" id="empId" required>
+                        </div>
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" id="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Department</label>
+                            <input type="text" id="department" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="text" id="phone">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Position</label>
+                            <input type="text" id="position" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Base Salary</label>
+                            <input type="number" id="baseSalary" step="0.01" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Hire Date</label>
+                        <input type="date" id="hireDate" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeModal('employeeModal')">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payroll Modal -->
+    <div id="payrollModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Payroll</h2>
+                <button class="close" onclick="closeModal('payrollModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="payrollForm" onsubmit="handlePayrollSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Employee ID</label>
+                            <input type="text" id="payrollEmpId" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Base Salary</label>
+                            <input type="number" id="payrollBaseSalary" step="0.01" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Pay Period Start</label>
+                            <input type="date" id="periodStart" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Pay Period End</label>
+                            <input type="date" id="periodEnd" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Overtime</label>
+                            <input type="number" id="overtime" step="0.01" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label>Bonus</label>
+                            <input type="number" id="bonus" step="0.01" value="0">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Deductions</label>
+                        <input type="number" id="deductions" step="0.01" value="0">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeModal('payrollModal')">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
